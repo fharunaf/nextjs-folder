@@ -1,6 +1,6 @@
 import { getImageUrl } from './utils.js'
 
-export default function Profile() {
+export const Profile = () => {
   return (
     <Card>
       <Avatar
@@ -30,6 +30,36 @@ function Card({children}) {
     <div className='card'>
       {children}
     </div>
+  );
+}
+
+
+function Item({name_n,isPacked}) {
+  return (
+    <li className="item">
+      {name_n} {isPacked && '✔'}
+    </li>
+  );
+}
+export default function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item
+         isPacked={true}
+         name_n="Space suit"
+        />
+        <Item
+         isPacked={true}
+         name_n="Helmet with a golden leaf"
+        />
+        <Item
+         isPacked={false}
+         name_n="Photo of Tam"
+        />
+      </ul>
+    </section>
   );
 }
 
